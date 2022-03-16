@@ -2,11 +2,10 @@
 // import Highcharts from 'highcharts'
 // import HighchartsReact from 'highcharts-react-official'
 
-
 // const dataObject = {
 //   values: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
 //   previousValues: [21.5, 171.5, 156.4, 29.2, 44.0, 96.0, 112.6, 156.5, 106.4, 124.1, 105.6, 84.4],
-//   labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] 
+//   labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 // }
 
 // const options = {
@@ -29,7 +28,7 @@
 //     text: '- Only 2021 -'
 // },
 //   series: [{
-    
+
 //     data: dataObject.values
 //     }, {
 //         data: dataObject.previousValues
@@ -43,7 +42,7 @@
 //   },
 //   yAxis: {
 //     offset: -10,
-    
+
 //     labels: {
 //       align: "center"
 //     },
@@ -69,10 +68,9 @@
 // </div>
 
 // export default App;
-import "./App.css";
 
+import NavBar from "./NavBar";
 import React from "react";
-
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
@@ -81,9 +79,9 @@ Highcharts.setOptions({
 });
 
 const dataObject = {
-    values: [1.1, 0.8, 0.12, 0.9, 3],
-    labels: ['FTM', 'XRP', 'DOGE', 'ADA', 'XTZ'] 
-  }
+  values: [1.1, 0.8, 0.12, 0.9, 3],
+  labels: ["FTM", "XRP", "DOGE", "ADA", "XTZ"],
+};
 
 const barOptions = {
   chart: {
@@ -111,12 +109,12 @@ const barOptions = {
   },
   series: [
     {
-      type: 'bar',
+      type: "bar",
       name: "Taiwan Coinbase",
       data: [
         { y: dataObject.values[0], color: "#058DC7" },
         { y: dataObject.values[1], color: "#50B432" },
-        { y: dataObject.values[2], color: "#ED561B" }, 
+        { y: dataObject.values[2], color: "#ED561B" },
         { y: dataObject.values[3], color: "#DDDF00" },
         { y: dataObject.values[4], color: "#24CBE5" },
       ],
@@ -178,29 +176,33 @@ const donutOptions = {
         {
           name: dataObject.labels[4],
           y: dataObject.values[4],
-        }
+        },
       ],
     },
   ],
 };
 
 const App = () => (
-  <div className="flex w-full m-2 border-2 h-screen border-x-cyan-900">
-    <div className="w-1/2 m-2 border-2 h-screen border-cyan-500">
-      <HighchartsReact
-        highcharts={Highcharts}
-        options={barOptions}
-        containerProps={{ style: { height: "100%", weight: "100%" } }}
-      />
+  <>
+    <NavBar />
+    <div className="flex w-full m-2 border-2 h-screen border-x-cyan-900">
+      <div className="w-1/2 m-2 border-2 h-screen border-cyan-500">
+        <HighchartsReact
+          highcharts={Highcharts}
+          options={barOptions}
+          containerProps={{ style: { height: "100%", weight: "100%" } }}
+        />
+      </div>
+      <div className="w-1/2 m-2 border-2 h-screen border-cyan-500">
+        <HighchartsReact
+          highcharts={Highcharts}
+          options={donutOptions}
+          containerProps={{ style: { height: "100%", weight: "100%" } }}
+        />
+      </div>
     </div>
-    <div className="w-1/2 m-2 border-2 h-screen border-cyan-500">
-      <HighchartsReact
-        highcharts={Highcharts}
-        options={donutOptions}
-        containerProps={{ style: { height: "100%", weight: "100%" } }}
-      />
-    </div>
-  </div>
+    <Contacts />
+  </>
 );
 
 export default App;
