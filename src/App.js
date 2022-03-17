@@ -8,10 +8,7 @@ import BarChart from "./components/BarChart";
 //   colors: ["#058DC7", "#50B432", "#ED561B", "#DDDF00", "#24CBE5"],
 // });
 
-const dataObject = {
-  values: [1.1, 0.8, 0.12, 0.9, 3],
-  labels: ["FTM", "XRP", "DOGE", "ADA", "XTZ"],
-};
+
 
 
 
