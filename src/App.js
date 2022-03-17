@@ -1,74 +1,3 @@
-// import './App.css';
-// import Highcharts from 'highcharts'
-// import HighchartsReact from 'highcharts-react-official'
-
-// const dataObject = {
-//   values: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
-//   previousValues: [21.5, 171.5, 156.4, 29.2, 44.0, 96.0, 112.6, 156.5, 106.4, 124.1, 105.6, 84.4],
-//   labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-// }
-
-// const options = {
-//   chart: {
-//     type: "areaspline",
-//     height: 0,
-//     spacingLeft: 100,
-//     spacingRight: 100,
-//     backgroundColor: "transparent"
-//   },
-//   title: {
-//     text: 'Sales Data',
-//     style: {
-//       color: 'Orange',
-//       fontWeight: 'bold',
-//       fontSize:'30px'
-//     }
-//   },
-//   subtitle: {
-//     text: '- Only 2021 -'
-// },
-//   series: [{
-
-//     data: dataObject.values
-//     }, {
-//         data: dataObject.previousValues
-//   }],
-//   xAxis: {
-//     type: "category",
-//     categories: dataObject.labels,
-//     labels: {
-//       align: "center"
-//     }
-//   },
-//   yAxis: {
-//     offset: -10,
-
-//     labels: {
-//       align: "center"
-//     },
-//     title: {
-//       text: undefined
-//     }
-//   },
-//   tooltip: {
-//     backgroundColor: "lightgreen",
-//     borderRadius: 15,
-//     borderWidth: 0,
-//     style: {
-//       fontSize: "60px"
-//     }
-//   },
-// }
-
-// const App = () => <div>
-//   <HighchartsReact
-//     highcharts={Highcharts}
-//     options={options}
-//   />
-// </div>
-
-// export default App;
-
 import NavBar from "./NavBar";
 import React from "react";
 import Highcharts from "highcharts";
@@ -185,23 +114,23 @@ const donutOptions = {
 const App = () => (
   <>
     <NavBar />
-    <div className="flex w-full m-2 border-2 h-screen border-x-cyan-900">
-      <div className="w-1/2 m-2 border-2 h-screen border-cyan-500">
+    <div className="h-full grid-cols-3 gap-4 content-start px-6 pt-6 bg-black rounded-lg shadow-card flex flex-wrap">
+      <div className="pt-6 h-full justify-center px-2 py-2 bg-white rounded-lg shadow-card sm:px-6">
         <HighchartsReact
           highcharts={Highcharts}
           options={barOptions}
-          containerProps={{ style: { height: "100%", weight: "100%" } }}
+          containerProps={{ style: { height: "50%", weight: "50%" } }}
         />
       </div>
-      <div className="w-1/2 m-2 border-2 h-screen border-cyan-500">
+
+      <div className="px-2 pt-6 h-xl justify-center  bg-white rounded-lg shadow-card sm:px-6">
         <HighchartsReact
           highcharts={Highcharts}
           options={donutOptions}
-          containerProps={{ style: { height: "100%", weight: "100%" } }}
+          containerProps={{ style: { height: "50%", weight: "50%" } }}
         />
       </div>
     </div>
-    <Contacts />
   </>
 );
 
