@@ -15,7 +15,7 @@ const dataObject = {
 const barOptions = {
   chart: {
     type: "areaspline",
-    height: 720,
+    height: 400,
   },
   title: {
     text: "Crypto Bar Chart",
@@ -111,15 +111,39 @@ const donutOptions = {
   ],
 };
 
+const graphs = [
+  { name: 'Bar', chart:  <HighchartsReact
+  highcharts={Highcharts}
+  options={barOptions}
+  containerProps={{ style: { height: "50%", weight: "50%" } }}
+/> },
+  { name: 'Pie', chart: <HighchartsReact
+  highcharts={Highcharts}
+  options={donutOptions}
+  containerProps={{ style: { height: "50%", weight: "50%" } }}
+/> },
+]
+
 const App = () => (
   <>
     <NavBar />
-    <div className="h-full grid-cols-3 gap-4 content-start px-6 pt-6 bg-black rounded-lg shadow-card flex flex-wrap">
+    <div>
+      <h3 className="text-lg leading-6 font-medium text-gray-900 justify-center">Crypto Charts</h3>
+      <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
+        {graphs.map((item) => (
+          <div key={item.name} className="px-4 py-5 shadow-card bg-red-700 shadow rounded-lg overflow-hidden sm:p-6">
+            <dt className="text-sm font-medium text-yellow-500 truncate">{item.name}</dt>
+            <dd className="mt-1 text-3xl font-semibold text-gray-900">{item.chart}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+    {/* <div className="h-full grid-cols-3 gap-4 content-start px-6 pt-6 bg-black rounded-lg shadow-card flex flex-wrap">
       <div className="pt-6 h-full justify-center px-2 py-2 bg-white rounded-lg shadow-card sm:px-6">
         <HighchartsReact
           highcharts={Highcharts}
           options={barOptions}
-          containerProps={{ style: { height: "50%", weight: "50%" } }}
+          containerProps={{ style: { height: "100%", weight: "50%" } }}
         />
       </div>
 
@@ -127,10 +151,10 @@ const App = () => (
         <HighchartsReact
           highcharts={Highcharts}
           options={donutOptions}
-          containerProps={{ style: { height: "50%", weight: "50%" } }}
+          containerProps={{ style: { height: "100%", weight: "50%" } }}
         />
       </div>
-    </div>
+    </div> */}
   </>
 );
 
