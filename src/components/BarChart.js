@@ -9,7 +9,7 @@ const dataObject = {
 const barOptions = {
     chart: {
       type: "areaspline",
-      height: 720,
+      height: 400,
     },
     title: {
       text: "Crypto Bar Chart",
