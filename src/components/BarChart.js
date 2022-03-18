@@ -5,9 +5,10 @@ import HighchartsReact from "highcharts-react-official";
 const BarChart = ({ data }) => {
   const dataObject = {
     values: data,
-    labels: ["USDC", "XRP", "DOGE", "ADA", "XTZ", "BTC"],
+    labels: ["USDC", "XRP", "DOGE", "ADA", "XTZ"],
   };
   const barOptions = {
+    colors: ["#058DC7", "#50B432", "#ED561B", "#DDDF00", "#24CBE5"],
     chart: {
       type: "areaspline",
       height: 400,
@@ -36,6 +37,7 @@ const BarChart = ({ data }) => {
         type: "bar",
         name: "Taiwan Coinbase",
         data: data,
+        colorByPoint: true,
       },
     ],
   };

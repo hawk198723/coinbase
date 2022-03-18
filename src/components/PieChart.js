@@ -1,18 +1,16 @@
-import React from 'react'
+import React from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
 
-Highcharts.setOptions({
-  colors: ["#058DC7", "#50B432", "#ED561B", "#DDDF00", "#24CBE5"],
-});
 
-const PieChart = ({usdc, xrp, doge, ada, xtz}) => {
+const PieChart = ({ data }) => {
   const dataObject = {
-    values: [usdc, xrp, doge, ada, xtz],
+    values: data,
     labels: ["USDC", "XRP", "DOGE", "ADA", "XTZ"],
-  };  
-const donutOptions = {
+  };
+  const donutOptions = {
+    colors: ["#058DC7", "#50B432", "#ED561B", "#DDDF00", "#24CBE5"],
     chart: {
       plotBackgroundColor: null,
       plotBorderWidth: null,
@@ -42,8 +40,8 @@ const donutOptions = {
     },
     series: [
       {
-        name: "Month",
-        colorByPoint: true,
+        name: "Percentage",
+        // colorByPoint: true,
         data: [
           {
             name: dataObject.labels[0],
@@ -73,11 +71,11 @@ const donutOptions = {
   };
   return (
     <HighchartsReact
-            highcharts={Highcharts}
-            options={donutOptions}
-            containerProps={{ style: { height: "100%", weight: "100%" } }}
-          />
-  )
-}
+      highcharts={Highcharts}
+      options={donutOptions}
+      containerProps={{ style: { height: "100%", weight: "100%" } }}
+    />
+  );
+};
 
-export default PieChart
+export default PieChart;

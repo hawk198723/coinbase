@@ -21,42 +21,26 @@ const App = () => {
     };
     fetchData();
   }, []);
-  console.log(Data.rates);
   const xrpValue = 1 / Data.rates.XRP;
   const dogeValue = 1 / Data.rates.DOGE;
   const adaValue = 1 / Data.rates.ADA;
   const xtzValue = 1 / Data.rates.XTZ;
   const usdcValue = 1 / Data.rates.USDC;
-  const btcValue = 1 / Data.rates.BTC;
 
-  let dataForBar = [
-    usdcValue,
-    xrpValue,
-    dogeValue,
-    adaValue,
-    xtzValue,
-    btcValue,
-  ];
+  let dataForBar = [usdcValue, xrpValue, dogeValue, adaValue, xtzValue];
+  let dataForPie = [usdcValue, xrpValue, dogeValue, adaValue, xtzValue];
 
   console.log(`USDC price is ${usdcValue} \nXRP price is ${xrpValue} \nDOGE price is ${dogeValue} \nADA price is ${adaValue} \nXTZ price is ${xtzValue}
   `);
 
   const graphs = [
     {
-      name: "Bar",
+      name: "This is my Bar Chart",
       chart: <BarChart data={dataForBar} />,
     },
     {
-      name: "Pie",
-      chart: (
-        <PieChart
-          usdc={usdcValue}
-          xrp={xrpValue}
-          doge={dogeValue}
-          ada={adaValue}
-          xtz={xtzValue}
-        />
-      ),
+      name: "This is my Pizza Chart",
+      chart: <PieChart data={dataForPie} />,
     },
   ];
 
