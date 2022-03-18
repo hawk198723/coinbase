@@ -1,12 +1,13 @@
-import React from 'react'
+import React from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
-const dataObject = {
-    values: [1.1, 0.8, 0.12, 0.9, 3],
-    labels: ["FTM", "XRP", "DOGE", "ADA", "XTZ"],
-  };  
-const barOptions = {
+const BarChart = ({usdc, xrp, doge, ada, xtz}) => {
+  const dataObject = {
+    values: [usdc, xrp, doge, ada, xtz],
+    labels: ["USDC", "XRP", "DOGE", "ADA", "XTZ"],
+  };
+  const barOptions = {
     chart: {
       type: "areaspline",
       height: 400,
@@ -44,15 +45,13 @@ const barOptions = {
       },
     ],
   };
+  return (
+    <HighchartsReact
+      highcharts={Highcharts}
+      options={barOptions}
+      containerProps={{ style: { height: "100%", weight: "100%" } }}
+    />
+  );
+};
 
-  const BarChart = () => {
-    return (
-        <HighchartsReact
-  highcharts={Highcharts}
-  options={barOptions}
-  containerProps={{ style: { height: "100%", weight: "100%" } }}
-/>
-    )
-  }
-
-  export default BarChart
+export default BarChart;
