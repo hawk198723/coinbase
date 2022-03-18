@@ -2,10 +2,10 @@ import React from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
-const BarChart = ({usdc, xrp, doge, ada, xtz}) => {
+const BarChart = ({ data }) => {
   const dataObject = {
-    values: [usdc, xrp, doge, ada, xtz],
-    labels: ["USDC", "XRP", "DOGE", "ADA", "XTZ"],
+    values: data,
+    labels: ["USDC", "XRP", "DOGE", "ADA", "XTZ", "BTC"],
   };
   const barOptions = {
     chart: {
@@ -35,13 +35,7 @@ const BarChart = ({usdc, xrp, doge, ada, xtz}) => {
       {
         type: "bar",
         name: "Taiwan Coinbase",
-        data: [
-          { y: dataObject.values[0], color: "#058DC7" },
-          { y: dataObject.values[1], color: "#50B432" },
-          { y: dataObject.values[2], color: "#ED561B" },
-          { y: dataObject.values[3], color: "#DDDF00" },
-          { y: dataObject.values[4], color: "#24CBE5" },
-        ],
+        data: data,
       },
     ],
   };

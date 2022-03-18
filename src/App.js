@@ -27,21 +27,24 @@ const App = () => {
   const adaValue = 1 / Data.rates.ADA;
   const xtzValue = 1 / Data.rates.XTZ;
   const usdcValue = 1 / Data.rates.USDC;
+  const btcValue = 1 / Data.rates.BTC;
+
+  let dataForBar = [
+    usdcValue,
+    xrpValue,
+    dogeValue,
+    adaValue,
+    xtzValue,
+    btcValue,
+  ];
+
   console.log(`USDC price is ${usdcValue} \nXRP price is ${xrpValue} \nDOGE price is ${dogeValue} \nADA price is ${adaValue} \nXTZ price is ${xtzValue}
   `);
 
   const graphs = [
     {
       name: "Bar",
-      chart: (
-        <BarChart
-          usdc={usdcValue}
-          xrp={xrpValue}
-          doge={dogeValue}
-          ada={adaValue}
-          xtz={xtzValue}
-        />
-      ),
+      chart: <BarChart data={dataForBar} />,
     },
     {
       name: "Pie",
