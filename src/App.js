@@ -4,6 +4,7 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import "./App.css";
 
+
 Highcharts.setOptions({
   colors: ["2563eb", "#4f46e5", "#0891b2", "#67e8f9", "#5eead4"],
 });
@@ -145,7 +146,7 @@ const graphs = [
 const App = () => (
   <>
     <NavBar />
-    <div>
+    <body className="bg-gradient-to-r from-cyan-500 to-blue-500">
       <h3 className="text-lg leading-6 font-medium text-gray-900 justify-center">
         <h1 className="text-center">Crypto Charts</h1>
       </h3>
@@ -166,24 +167,8 @@ const App = () => (
           </div>
         ))}
       </dl>
-    </div>
-    {/* <div className="h-full grid-cols-3 gap-4 content-start px-6 pt-6 bg-black rounded-lg shadow-card flex flex-wrap">
-      <div className="pt-6 h-full justify-center px-2 py-2 bg-white rounded-lg shadow-card sm:px-6">
-        <HighchartsReact
-          highcharts={Highcharts}
-          options={barOptions}
-          containerProps={{ style: { height: "100%", weight: "50%" } }}
-        />
-      </div>
+    </body>
 
-      <div className="px-2 pt-6 h-xl justify-center  bg-white rounded-lg shadow-card sm:px-6">
-        <HighchartsReact
-          highcharts={Highcharts}
-          options={donutOptions}
-          containerProps={{ style: { height: "100%", weight: "50%" } }}
-        />
-      </div>
-    </div> */}
   </>
 );
 
