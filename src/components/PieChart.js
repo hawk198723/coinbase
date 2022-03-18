@@ -2,9 +2,15 @@ import React from 'react'
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
-const dataObject = {
-    values: [1.1, 0.8, 0.12, 0.9, 3],
-    labels: ["FTM", "XRP", "DOGE", "ADA", "XTZ"],
+
+Highcharts.setOptions({
+  colors: ["#058DC7", "#50B432", "#ED561B", "#DDDF00", "#24CBE5"],
+});
+
+const PieChart = ({usdc, xrp, doge, ada, xtz}) => {
+  const dataObject = {
+    values: [usdc, xrp, doge, ada, xtz],
+    labels: ["USDC", "XRP", "DOGE", "ADA", "XTZ"],
   };  
 const donutOptions = {
     chart: {
@@ -42,7 +48,7 @@ const donutOptions = {
           {
             name: dataObject.labels[0],
             y: dataObject.values[0],
-            sliced: true,
+            sliced: false,
             selected: true,
           },
           {
@@ -65,8 +71,6 @@ const donutOptions = {
       },
     ],
   };
-
-const PieChart = () => {
   return (
     <HighchartsReact
             highcharts={Highcharts}
