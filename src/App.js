@@ -49,7 +49,7 @@ const App = () => {
       <NavBar />
       <div>
         <h3 className="text-lg leading-6 font-medium text-gray-900 justify-center">
-          Crypto Charts
+          Welcome to Taiwan Coinbase, Apearmy!
         </h3>
         <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
           {graphs.map((item) => (
