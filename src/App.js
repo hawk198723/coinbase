@@ -55,7 +55,7 @@ const App = () => {
           {graphs.map((item) => (
             <div
               key={item.name}
-              className="px-4 py-5 shadow-card bg-red-700 shadow rounded-lg overflow-hidden sm:p-6"
+              className="px-4 py-5 shadow-card bg-blue-900 shadow rounded-lg overflow-hidden sm:p-6"
             >
               <dt className="text-sm font-medium text-yellow-500 truncate">
                 {item.name}
@@ -67,7 +67,6 @@ const App = () => {
           ))}
         </dl>
       </div>
-      {/* <Contacts /> */}
     </div>
   );
 };
