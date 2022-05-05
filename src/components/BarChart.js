@@ -35,7 +35,7 @@ const BarChart = ({ data }) => {
     series: [
       {
         type: "bar",
-        name: "Taiwan Coinbase",
+        name: "Bar Chart",
         data: data,
         colorByPoint: true,
       },
